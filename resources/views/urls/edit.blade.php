@@ -20,18 +20,21 @@
 
             <div class="mb-4">
                 <label for="long_url" class="block mb-1">Long URL</label>
-                <input type="text" name="long_url" id="long_url" value="{{ old('long_url', $url->long_url) }}" class="w-full px-4 py-2 border rounded-lg">
+                <input type="text" name="long_url" id="long_url" value="{{ old('long_url', $url->long_url) }}"
+                    class="w-full px-4 py-2 border rounded-lg">
             </div>
 
             <div class="mb-4">
                 <label for="slug" class="block mb-1">Slug</label>
-                <input type="text" name="slug" id="slug" value="{{ old('slug', $url->slug) }}" class="w-full px-4 py-2 border rounded-lg">
+                <input type="text" name="slug" id="slug" value="{{ old('slug', $url->slug) }}"
+                    class="w-full px-4 py-2 border rounded-lg">
             </div>
 
             <!-- Add other fields as needed -->
 
             <div class="mt-6">
-                <button type="submit" class="px-4 py-2   bg-pink-500 hover:bg-purple-500 duration-300 text-white rounded-lg">Update</button>
+                <button type="submit"
+                    class="px-4 py-2   bg-pink-500 hover:bg-purple-500 duration-300 text-white rounded-lg">Update</button>
             </div>
         </form>
     </div>

@@ -15,7 +15,7 @@ class SlugController extends Controller
             $url->increment('clicks');
             return redirect()->to($url->long_url);
         } else {
-            abort(404);
+            return view("welcome");
         }
     }
 }

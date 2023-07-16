@@ -1,66 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="./.githubassets/cover.svg" width="400" alt="MyURLs Logo"></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## About MyURLs
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A simple url shortener made with laravel + tailwindcss.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### features
+- user authenticatiom
+- URL shortening and redirection
+- Expiration dates for short URLs
+- Click tracking analytics
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### preview
 
-## Learning Laravel
+![Alt text](.githubassets/welcome.png)
+welcome screen
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![Alt text](.githubassets/dashboard.png)
+dashboard
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![Alt text](.githubassets/create.png)
+shortener
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+### installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+#### 1. Prerequisites:
+- Make sure you have PHP version 8+ installed on your system. You can check by running the following in your terminal.
+```
+php -v
+```
 
-### Premium Partners
+- Install Composer, a dependency manager for PHP. You can download it from the official website: https://getcomposer.org/.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Install MySQL, a popular database system. You can download and install MySQL from the official website: https://dev.mysql.com/downloads/ or You can use a server stack like `Xampp` or `Wamp` which comes pre-installed with PHP and MySQL.
 
-## Contributing
+- Visit the official Node.js website: https://nodejs.org/. Download the appropriate installer for your operating system and run it. Run the following command to verify that Node.js and npm are installed: 
+```
+node -v
+npm -v
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### 2. Clone the repository:
 
-## Security Vulnerabilities
+Open your terminal and navigate to the directory where you want to install the app.
+Run the following command to clone the repository: 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+git clone https://github.com/bethropolis/myurls.git
+```
+
+#### 3. Install dependencies:
+
+Navigate into the app's directory: 
+
+```bash
+ cd myurls
+ ```
+
+Run the following command to install the app's dependencies using Composer and npm:
+
+```bash
+# composer
+composer install 
+# npm
+npm install
+```
+
+#### 4. Configure the environment:
+
+Make a copy of the `.env.example` file and rename it to `.env`:
+```
+ cp .env.example .env
+ ```
+
+
+#### 5. Generate an application key:
+
+```bash
+ php artisan key:generate
+```
+
+#### 6. Set up the database:
+
+Create a new database called `myurls` onto your database manually.
+If you have mysql environment installed you can run.
+```bash
+mysql -u your_username -p -e "CREATE DATABASE myurls;"
+```
+Update the `.env` file with the necessary database credentials: 
+```
+DB_CONNECTION=mysql 
+DB_HOST=127.0.0.1 
+DB_PORT=3306 
+DB_DATABASE=myurls
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+```
+> note: your'll need to create the database called `myurls` or any other name according to the value of `DB_DATABASE`.
+
+#### 7. Migrate and seed the database:
+
+Run the following command to migrate the database tables: 
+```bash
+php artisan migrate
+```
+
+#### 8. Serve the application:
+   
+Run the following command to start the Laravel development server & vite server: 
+```bash
+npm run dev
+php artisan serve
+```
+The app will be accessible at `http://localhost:8000` in your browser.
+
+That's it! You've successfully installed the app.
+
+
+
+## Intension
+I made this project to learn more about Laravel (so far I'm Loving it).
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+My favourite license, [MIT license](https://opensource.org/licenses/MIT) 
