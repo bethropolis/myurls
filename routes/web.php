@@ -10,7 +10,7 @@ use App\Http\Controllers\SlugController;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 

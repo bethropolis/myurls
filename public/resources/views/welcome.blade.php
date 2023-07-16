@@ -6,7 +6,7 @@
             <h1
                 class="text-4xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text mb-4">
                 Welcome to MyURLs</h1>
-            <p class="text-lg text-gray-600 mb-8">a simple way to shorten your URLs</p>
+            <p class="text-lg text-gray-600 mb-8">The simplest way to shorten your URLs</p>
             <div class="container flex items-center justify-center gap-4">
                 <a href="{{ route('urls.index') }}"
                     class="w-36 px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-pink-500 hover:via-purple-500 hover:to-blue-500 hover:text-white transition duration-300">

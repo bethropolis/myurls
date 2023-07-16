@@ -10,22 +10,13 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    /**
-     * Show the registration form.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function showRegistrationForm()
     {
         return view('auth.register');
     }
 
-    /**
-     * Handle user registration.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -38,18 +29,18 @@ class RegisterController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        // Create the user
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        // You can add any additional logic here, like sending a confirmation email
 
-        // Log in the user after registration
+
+
         auth()->login($user);
 
-        return redirect('/dashboard'); // Change this to the desired redirect path after successful registration
+        return redirect('/urls');
     }
 }
